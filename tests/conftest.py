@@ -2,7 +2,6 @@ from selenium import webdriver
 from pages.login_page import LoginPage
 from pages.new_pet_page import NewPetPage
 from data.data import LoginPageData, NewPetData
-import time
 import pytest
 
 
@@ -18,11 +17,9 @@ def browser():
 def login(browser):
     page = LoginPage(browser, LoginPageData.LOGIN_PAGE_URL)
     page.open()
-    page.enter_login()
+    page.enter_valid_login()
     page.enter_pass()
-    time.sleep(3)
     page.submit_btn()
-    time.sleep(3)
 
 
 @pytest.fixture()

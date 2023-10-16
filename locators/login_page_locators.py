@@ -9,3 +9,5 @@ class LoginPageLocators:
     TOGGLE_PASS_VISIBILITY = (By.XPATH, '//*[@id="password"]/i[1]')
     LOGO = (By.XPATH, '//*[@id="app"]/header[1]/div[1]/div[1]/images[1]')
     DETAILS_BTN = (By.XPATH, '//*[@id="app"]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]')
+    WRONG = (By.CSS_SELECTOR, '#pv_id_2_content > div > div > div')
+    FIELD_IS_EMAIL = (By.CSS_SELECTOR, "#pv_id_2_content > div > form > div:nth-child(1) > div")

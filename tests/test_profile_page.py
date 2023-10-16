@@ -60,7 +60,7 @@ def test_delete_pet(browser, login):
     page.open()
     page.delete_pet()
     time.sleep(2)
+    page.confirm_deleting()
+    time.sleep(3)
     response = requests.get(PetEditPage.PET_EDIT_URL)
     assert response.status_code == 200
-
-

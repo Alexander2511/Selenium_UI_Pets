@@ -10,7 +10,7 @@ def test_go_to_profile_page(browser, login):
     page = MainPage(browser, MainPageData.MAIN_PAGE_URL)
     page.open()
     page.click_logo_btn()
-    time.sleep(4)
+    time.sleep(5)
     page.go_to_profile()
     response = requests.get(ProfilePageData.PROFILE_PAGE_URL)
     assert response.status_code == 200

@@ -1,20 +1,41 @@
-from data.data import LoginPageData, ProfilePageData
+from data.data import LoginPageData
 from pages.login_page import LoginPage
-import requests
+from locators.profile_page_locators import ProfilePageLocators
+from locators.login_page_locators import LoginPageLocators
 import pytest
-import time
 
 
-@pytest.mark.parametrize("email", [LoginPageData.VALID_EMAIL, LoginPageData.INVALID_EMAIL])
+@pytest.mark.parametrize("email", LoginPageData.VALID_EMAILS)
 @pytest.mark.smoke
 def test_login(browser, email):
     page = LoginPage(browser, LoginPageData.LOGIN_PAGE_URL)
     page.open()
     page.enter_login(email)
     page.enter_pass()
-    time.sleep(3)
     page.submit_btn()
-    time.sleep(4)
-    response = requests.get(ProfilePageData.PROFILE_PAGE_URL)
-    assert response.status_code == 200
-    browser.save_screenshot("C:/Users/freed/PycharmProjects/Selenium_UI_Pets/screenshots/login_result.png")
+    page.element_is_visible(ProfilePageLocators.ADD_PET_BTN, 5)
+    browser.save_screenshot("C:/Users/freed/PycharmProjects/Selenium_UI_Pets/screenshots/login.png")
+
+
+@pytest.mark.parametrize("email", LoginPageData.INVALID_EMAILS)
+@pytest.mark.smoke
+def test_login_with_unregistered_email(browser, email):
+    page = LoginPage(browser, LoginPageData.LOGIN_PAGE_URL)
+    page.open()
+    page.enter_login(email)
+    page.enter_pass()
+    page.submit_btn()
+    page.element_is_visible(LoginPageLocators.WRONG, 5)
+    browser.save_screenshot("C:/Users/freed/PycharmProjects//Selenium_UI_Pets/screenshots/login_1.png")
+
+
+@pytest.mark.parametrize("email", LoginPageData.INCORRECT_EMAILS)
+@pytest.mark.regression
+def test_login_with_incorrect_email(browser, email):
+    page = LoginPage(browser, LoginPageData.LOGIN_PAGE_URL)
+    page.open()
+    page.enter_login(email)
+    page.enter_pass()
+    page.submit_btn()
+    page.element_is_visible(LoginPageLocators.FIELD_IS_EMAIL, 5)
+    browser.save_screenshot("C:/Users/freed/PycharmProjects/Selenium_UI_Pets/screenshots/login_2.png")

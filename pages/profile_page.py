@@ -26,7 +26,7 @@ class ProfilePage(BasePage):
     def delete_pet(self):
         delete_pet_btn = self.browser.find_element(*ProfilePageLocators.DELETE_PET_BTN)
         delete_pet_btn.click()
+
+    def confirm_deleting(self):
         confirm_btn = self.browser.find_element(*ProfilePageLocators.CONFIRM_BTN)
-        confirm_btn.clcik()
-
-
+        confirm_btn.click()

@@ -26,7 +26,7 @@ class NewPetPage(BasePage):
         pet_gender.click()
 
     def choose_male_gender(self):
-        male_gender = self.browser.find_element(By.XPATH, '//div[3]/div/ul/li[1]')
+        male_gender = self.browser.find_element(*NewPetLocators.GENDER_MALE)
         male_gender.click()
 
     def submit_btn(self):

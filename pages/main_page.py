@@ -86,5 +86,3 @@ class MainPage(BasePage):
         pet_name = self.browser.find_element(*MainPageLocators.FILTER_BY_NAME)
         pet_name.send_keys(MainPageData.PET_NAME)
         pet_name.send_keys(Keys.ENTER)
-
-

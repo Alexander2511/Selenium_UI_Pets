@@ -5,9 +5,13 @@ from generator.generator import Generator
 
 
 class RegisterPage(BasePage):
-    def input_mail(self):
+    def input_email(self):
         input_email = self.browser.find_element(*RegisterPageLocators.LOGIN_INPUT)
         input_email.send_keys(RegisterPageData.LOGIN)
+
+    def input_emails(self, email):
+        input_email = self.browser.find_element(*RegisterPageLocators.LOGIN_INPUT)
+        input_email.send_keys(email)
 
     def input_pass(self):
         input_pass = self.browser.find_element(*RegisterPageLocators.INPUT_PASS)

@@ -11,7 +11,7 @@ class MainPageLocators:
     REPTILE_CATEGORY = (By.ID, 'pv_id_2_2')
     HAMSTER_CATEGORY = (By.ID, 'pv_id_2_3')
     PARROT_CATEGORY = (By.ID, 'pv_id_2_4')
-    LOGO = (By.XPATH, '//*[@id="app"]/header[1]/div[1]/div[1]/images[1]')
+    LOGO = (By.XPATH, '//*[@id="app"]/header/div/div')
     NEXT_PAGE = (By.XPATH, '//*[@id="app"]/main[1]/div[1]/div[2]/div[3]/button[3]')
     LAST_PAGE = (By.XPATH, '//*[@id="app"]/main[1]/div[1]/div[2]/div[3]/button[4]/span[1]')
     PREVIOUS_PAGE_BTN = (By.XPATH, '//*[@id="app"]/main[1]/div[1]/div[2]/div[3]/button[2]')

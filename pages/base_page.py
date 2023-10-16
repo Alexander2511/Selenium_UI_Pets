@@ -11,5 +11,20 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
-    def element_is_visible(self, locator, timeout=10):
+    def element_is_visible(self, locator, timeout=5):
         return Wait(self.browser, timeout).until(ec.visibility_of_element_located(locator))
+
+    def elements_are_visible(self, locator, timeout=5):
+        return Wait(self.browser, timeout).until(ec.visibility_of_all_elements_located(locator))
+
+    def element_is_present(self, locator, timeout=5):
+        return Wait(self.browser, timeout).until(ec.presence_of_element_located(locator))
+
+    def elements_are_present(self, locator, timeout=5):
+        return Wait(self.browser, timeout).until(ec.presence_of_all_elements_located(locator))
+
+    def element_is_not_visible(self, locator, timeout=5):
+        return Wait(self.browser, timeout).until(ec.invisibility_of_element_located(locator))
+
+    def element_is_clickable(self, locator, timeout=5):
+        return Wait(self.browser, timeout).until(ec.element_to_be_clickable(locator))

@@ -10,9 +10,11 @@ class MainPageData:
 class LoginPageData:
     LOGIN_PAGE_URL = 'http://34.141.58.52:8080/#/login'
     VALID_EMAIL = 'test@dog.com'
+    VALID_EMAILS = ['test@dog.com', 'test1@dog.com']
     VALID_PASS = 'Xx@12345'
     INVALID_PASS = '12345'
-    INVALID_EMAIL = 'ups@net.com'
+    INVALID_EMAILS = ['ups@net.com', 'issue@net.py']
+    INCORRECT_EMAILS = ['test.test.net', 'tut@domcom']
 
 
 class ProfilePageData:
@@ -35,5 +37,3 @@ class RegisterPageData:
     REGISTER_PAGE_URL = 'http://34.141.58.52:8080/#/register'
     LOGIN = f'{current_datetime.microsecond}@dog.com'
     PASS = 'Xx@12345'
-
-
