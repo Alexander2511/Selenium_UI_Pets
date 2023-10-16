@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from locators.register_page_locators import RegisterPageLocators
 from data.data import RegisterPageData
-from generator.generator import Generator
 
 
 class RegisterPage(BasePage):

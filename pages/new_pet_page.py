@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from locators.new_pet_page_locators import NewPetLocators
 from data.data import NewPetData
-from selenium.webdriver.common.by import By
 
 
 class NewPetPage(BasePage):
@@ -44,6 +43,3 @@ class NewPetPage(BasePage):
     def send_img(self):
         send_img = self.browser.find_element(*NewPetLocators.SEND_IMG)
         send_img.click()
-
-
-
